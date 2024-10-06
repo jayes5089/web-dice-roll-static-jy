@@ -14,7 +14,7 @@ async function rollDice() {
     const die2Element = document.getElementById('die2');
 
     try {
-        const response = await fetch ('http://localhost:3000/roll-dice');
+        const response = await fetch ('https://web-dice-roll-nodejs-jy-bcbcfjfacnc3aedj.centralus-01.azurewebsites.net/roll-dice');
         const data = await response.json();
 
         setDiceFace(die1Element, data.die1);
@@ -44,7 +44,7 @@ function setDiceFace(dieElement, number) {
 
 async function testCorsFailure() {
     try {
-        const response = await fetch('http://localhost:3000/roll-dice-fail');
+        const response = await fetch('https://web-dice-roll-nodejs-jy-bcbcfjfacnc3aedj.centralus-01.azurewebsites.net/roll-dice-fail');
         const data = await response.json();
         console.log('CORS Failure Test Response:', data);
     }
